@@ -4,5 +4,6 @@
 /home/rohit/dropwizard_testing/node1/App/src/main/java/com/dropwizard_application/Config.java
 /home/rohit/dropwizard_testing/node1/App/src/main/java/com/dropwizard_application/core/HashedStringRepresentation.java
 /home/rohit/dropwizard_testing/node1/App/src/main/java/com/dropwizard_application/App.java
+/home/rohit/dropwizard_testing/node1/App/src/main/java/com/dropwizard_application/JerseyClientConfiguration.java
 /home/rohit/dropwizard_testing/node1/App/src/main/java/com/dropwizard_application/health/TempHealthCheck.java
 /home/rohit/dropwizard_testing/node1/App/src/main/java/com/dropwizard_application/resources/HashCodeResource.java

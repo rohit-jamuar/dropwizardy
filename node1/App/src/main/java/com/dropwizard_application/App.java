@@ -4,8 +4,10 @@ import com.dropwizard_application.health.TempHealthCheck;
 import com.dropwizard_application.persistenceUnit.InputOutput;
 import com.dropwizard_application.persistenceUnit.InputOutputDAO;
 import com.dropwizard_application.resources.HashCodeResource;
+import com.sun.jersey.api.client.Client;
 
 import io.dropwizard.Application;
+import io.dropwizard.client.JerseyClientBuilder;
 import io.dropwizard.db.DataSourceFactory;
 import io.dropwizard.hibernate.HibernateBundle;
 import io.dropwizard.migrations.MigrationsBundle;
@@ -47,7 +49,7 @@ public class App extends Application<Config>
 		final HashCodeResource r = new HashCodeResource(dao);
 		environment.jersey().register(r);
 		
-		final Client client = new JerseyClientBuilder(environment).using(config.getJerseyClientConfiguration())
+		final Client client = new JerseyClientBuilder(environment).using(Config.getJerseyClientConfiguration())
                 .build(getName());
 		environment.addResource(new ExternalServiceResource(client));
 		
