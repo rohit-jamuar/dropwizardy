@@ -17,16 +17,18 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 
+import org.apache.http.client.HttpClient;
+
 @Path("/getHash")
 @Produces(MediaType.APPLICATION_JSON)
 public class HashCodeResource {
 
 	private final InputOutputDAO d;
-	private final Client c;
+	private final HttpClient c;
 	
-	public HashCodeResource(InputOutputDAO d, Client client) { 
+	public HashCodeResource(InputOutputDAO d, HttpClient clientFacilitator) { 
 		this.d = d;
-		this.c = client;
+		this.c = clientFacilitator;
 	}
 	
 	@GET

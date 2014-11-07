@@ -4717,3 +4717,54 @@ Command-line arguments:  -data /home/rohit/dropwizard_testing -os linux -ws gtk 
 
 !ENTRY org.eclipse.m2e.logback.appender 2 0 2014-11-07 18:42:58.715
 !MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2014-11-07 18:50:33.510
+!MESSAGE Launch configuration App (3) references closed project App2
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2014-11-07 18:50:33.510
+!MESSAGE Launch configuration App (3) references closed project App2
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2014-11-07 18:50:33.513
+!MESSAGE Launch configuration App (3) references closed project App2
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2014-11-07 18:53:12.775
+!MESSAGE No projects found for [/home/rohit/dropwizard_testing/node1/App/src/main/resources/migrations.xml]
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2014-11-07 18:53:12.929
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2014-11-07 18:53:12.931
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2014-11-07 18:54:24.105
+!MESSAGE No projects found for [/home/rohit/dropwizard_testing/node1/App/src/main/resources/migrations.xml]
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2014-11-07 18:54:24.261
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2014-11-07 18:54:24.264
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2014-11-07 18:56:41.402
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2014-11-07 18:56:41.405
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2014-11-07 18:57:33.180
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2014-11-07 18:57:33.181
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2014-11-07 18:57:49.269
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2014-11-07 18:57:49.270
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2014-11-07 18:58:33.268
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2014-11-07 18:58:33.270
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!

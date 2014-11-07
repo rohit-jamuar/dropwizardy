@@ -16,6 +16,5 @@ INDEX VERSION 1.127+/home/rohit/dropwizard_testing/.metadata/.plugins/org.eclips
 2283827821.index
 3682278952.index
 2090081164.index
-352465078.index
 3794758587.index
 3858239489.index

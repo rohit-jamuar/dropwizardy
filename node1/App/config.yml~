@@ -20,16 +20,6 @@ database:
   minSize: 8
   maxSize: 32
   checkConnectionWhileIdle: false
-httpClient:
-  timeout: 500ms
-  connectionTimeout: 500ms
-  timeToLive: 1h
-  cookiesEnabled: false
-  maxConnections: 1024
-  maxConnectionsPerRoute: 1024
-  keepAlive: 0ms
-  retries: 0
-  userAgent: App1 (C1)
 jerseyClient:
   minThreads: 1
   maxThreads: 128

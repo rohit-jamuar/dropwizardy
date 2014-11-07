@@ -1,5 +1,0 @@
-package com.dropwizard_application.persistenceUnit;
-
-public class InputOutputDAO {
-
-}
