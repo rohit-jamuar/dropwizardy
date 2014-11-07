@@ -1,0 +1,28 @@
+package com.dropwizard_application.dB;
+
+import java.util.List;
+
+import io.dropwizard.hibernate.AbstractDAO;
+
+import org.hibernate.SessionFactory;
+
+public class InputOutputDAO extends AbstractDAO<InputOutput>{
+
+	public InputOutputDAO(SessionFactory factory)
+	{
+		super(factory);
+	}
+	
+	public void create(InputOutput i) 
+	{
+		persist(i);
+	}
+	
+//	@SuppressWarnings("unchecked")
+	public List<InputOutput> fetchAll()
+	{
+//		return currentSession().createQuery("SELECT I.input, I.output FROM InputOutput I").list();
+		return currentSession().createCriteria(InputOutput.class).list();
+	}
+	
+}

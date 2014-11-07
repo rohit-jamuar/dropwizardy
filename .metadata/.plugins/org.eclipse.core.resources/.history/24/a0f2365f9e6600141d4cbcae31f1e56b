@@ -1,0 +1,5 @@
+package com.dropwizard_application.resources;
+
+public class CipherResource {
+
+}

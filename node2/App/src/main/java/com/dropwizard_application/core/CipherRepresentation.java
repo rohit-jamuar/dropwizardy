@@ -12,7 +12,7 @@ public class CipherRepresentation {
 	}
 	
 	@JsonProperty
-	public String getCTXT()
+	public String ctxt()
 	{
 		return this.ciphertext;
 	}

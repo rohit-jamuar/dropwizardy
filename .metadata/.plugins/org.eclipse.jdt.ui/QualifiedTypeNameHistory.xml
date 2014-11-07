@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="org.hibernate.validator.constraints.Length"/>
+<fullyQualifiedTypeName name="javax.ws.rs.QueryParam"/>
+<fullyQualifiedTypeName name="com.dropwizard_application.core.Representation"/>
+<fullyQualifiedTypeName name="com.codahale.metrics.health.HealthCheck"/>
+<fullyQualifiedTypeName name="com.dropwizard_application.health.TempHealthCheck"/>
+<fullyQualifiedTypeName name="com.dropwizard_application.resources.Resources"/>
+<fullyQualifiedTypeName name="java.lang.String"/>
+<fullyQualifiedTypeName name="java.lang.StringBuilder"/>
+<fullyQualifiedTypeName name="com.fasterxml.jackson.annotation.JsonProperty"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="org.hibernate.Session"/>
+<fullyQualifiedTypeName name="com.dropwizard_application.dB.InputOutput"/>
+<fullyQualifiedTypeName name="java.util.HashMap"/>
+<fullyQualifiedTypeName name="com.dropwizard_application.resources.EverythingPersisted"/>
+<fullyQualifiedTypeName name="org.hibernate.Criteria"/>
+<fullyQualifiedTypeName name="com.dropwizard_application.Config"/>
+<fullyQualifiedTypeName name="com.dropwizard_application.persistenceUnit.InputOutput"/>
+<fullyQualifiedTypeName name="com.dropwizard_application.HttpClientConfiguration"/>
+<fullyQualifiedTypeName name="io.dropwizard.client.JerseyClientBuilder"/>
+<fullyQualifiedTypeName name="com.sun.jersey.api.client.Client"/>
+<fullyQualifiedTypeName name="io.dropwizard.client.JerseyClientConfiguration"/>
+<fullyQualifiedTypeName name="com.sun.jersey.api.client.WebResource"/>
+</qualifiedTypeNameHistroy>

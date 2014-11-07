@@ -1,0 +1,41 @@
+package com.dropwizard_application.persistenceUnit;
+
+import com.google.common.base.Optional;
+
+import io.dropwizard.hibernate.AbstractDAO;
+
+import org.hibernate.Criteria;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+//import org.hibernate.Transaction;
+import org.hibernate.criterion.Restrictions;
+
+public class InputOutputDAO extends AbstractDAO<InputOutput>{
+
+	private SessionFactory factory;
+	public InputOutputDAO(SessionFactory factory)
+	{
+		super(factory);
+		this.factory = factory;
+	}
+	
+	public void create(InputOutput i) 
+	{
+//		Session newSession = factory.openSession();
+//		Transaction tx = newSession.beginTransaction();
+//		tx.begin();
+		persist(i);
+//		tx.commit();
+//		newSession.close();
+	}
+	
+	public Optional<InputOutput> findByInput(String s)
+	{
+		Session newSession = factory.openSession();
+		Criteria cr = newSession.createCriteria(InputOutput.class);
+		cr.add(Restrictions.eq("input",s));
+		newSession.close();
+		return Optional.fromNullable(uniqueResult(cr));
+	}
+	
+}

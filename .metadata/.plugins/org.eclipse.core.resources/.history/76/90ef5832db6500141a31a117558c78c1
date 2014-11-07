@@ -1,0 +1,9 @@
+package com.dropwizard_application.persistenceUnit;
+
+import com.google.common.base.Optional;
+import io.dropwizard.hibernate.AbstractDAO;
+import org.hibernate.SessionFactory;
+
+public class InputOutputDAO extends AbstractDAO<InputOutput>{
+
+}

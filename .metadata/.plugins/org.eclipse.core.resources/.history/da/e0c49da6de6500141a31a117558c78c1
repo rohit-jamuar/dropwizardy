@@ -1,0 +1,43 @@
+package com.dropwizard_application;
+
+import com.dropwizard_application.health.TempHealthCheck;
+import com.dropwizard_application.persistenceUnit.InputOutput;
+import com.dropwizard_application.resources.Resources;
+
+import io.dropwizard.Application;
+import io.dropwizard.db.DataSourceFactory;
+import io.dropwizard.hibernate.HibernateBundle;
+import io.dropwizard.setup.Bootstrap;
+import io.dropwizard.setup.Environment;
+
+public class App extends Application<Config>
+{
+
+	 public static void main(String[] args) throws Exception {
+	        new App().run(args);
+	    }
+	 
+	@Override
+	public void initialize(Bootstrap<Config> bootstrap) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	private final HibernateBundle<DBConfiguration> hibernate = new HibernateBundle<DBConfiguration>(InputOutput.class) {
+	    @Override
+	    public DataSourceFactory getDataSourceFactory(DBConfiguration configuration) {
+	        return configuration.getDataSourceFactory();
+	    }
+	};
+
+	@Override
+	public void run(Config configuration, Environment environment) throws Exception {
+		// TODO Auto-generated method stub
+		final Resources r = new Resources();
+		environment.jersey().register(r);
+		
+		final TempHealthCheck h = new TempHealthCheck();
+		environment.healthChecks().register("alwaysHappy", h);
+		
+	}
+}

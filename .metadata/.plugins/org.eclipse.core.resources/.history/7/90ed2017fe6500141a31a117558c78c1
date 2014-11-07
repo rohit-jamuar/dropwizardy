@@ -1,0 +1,33 @@
+package com.dropwizard_application.persistenceUnit;
+
+import java.util.List;
+
+import com.google.common.base.Optional;
+
+import io.dropwizard.hibernate.AbstractDAO;
+
+import org.hibernate.Criteria;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+//import org.hibernate.Transaction;
+import org.hibernate.criterion.Restrictions;
+
+public class InputOutputDAO extends AbstractDAO<InputOutput>{
+
+	public InputOutputDAO(SessionFactory factory)
+	{
+		super(factory);
+	}
+	
+	public void create(InputOutput i) 
+	{
+		persist(i);
+	}
+	
+	public  List<InputOutput> findByInput(String s)
+	{
+		return list(namedQuery("findStuff"));
+	}
+	
+}

@@ -1,0 +1,27 @@
+package com.dropwizard_application.persistenceUnit;
+
+import com.google.common.base.Optional;
+
+import io.dropwizard.hibernate.AbstractDAO;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+
+public class InputOutputDAO extends AbstractDAO<InputOutput>{
+
+	private SessionFactory factory;
+	
+	public InputOutputDAO(SessionFactory factory)
+	{
+		super(factory);
+		this.factory = factory;
+		
+	}
+	
+	public Optional<InputOutput> findByInput(String s)
+	{
+		Criteria cr = factory.openSession().createCriteria(InputOutput.class);
+		return Optional.fromNullable(uniqueResult())
+	}
+	
+}

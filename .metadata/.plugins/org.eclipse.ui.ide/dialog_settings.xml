@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<list key="installedFeatures">
+		<item value="com.android.ide.eclipse.adt.package.feature:23.0.2.1259578"/>
+		<item value="org.eclipse.cdt.gdb:7.0.0.201202111925"/>
+		<item value="org.eclipse.cdt:8.0.2.201202111925"/>
+		<item value="org.eclipse.egit.mylyn:2.1.0.201209190230-r"/>
+		<item value="org.eclipse.egit:2.1.0.201209190230-r"/>
+		<item value="org.eclipse.emf.common:2.11.0.v20141027-0406"/>
+		<item value="org.eclipse.emf.ecore:2.11.0.v20141027-0406"/>
+		<item value="org.eclipse.help:2.1.0.v20141029-2000"/>
+		<item value="org.eclipse.jdt:3.11.0.v20140806-2000"/>
+		<item value="org.eclipse.jgit:2.1.0.201209190230-r"/>
+		<item value="org.eclipse.m2e.feature:1.5.0.20140606-0033"/>
+		<item value="org.eclipse.m2e.logback.feature:1.5.0.20140606-0033"/>
+		<item value="org.eclipse.mylyn.commons.identity:1.5.0.v20140702-2248"/>
+		<item value="org.eclipse.mylyn.commons.notifications:1.5.0.v20140702-2248"/>
+		<item value="org.eclipse.mylyn.commons.repositories:1.5.0.v20140905-0008"/>
+		<item value="org.eclipse.mylyn.commons:3.13.0.v20140704-2323"/>
+		<item value="org.eclipse.mylyn.context_feature:3.13.0.v20140819-2236"/>
+		<item value="org.eclipse.mylyn.discovery:3.13.0.v20140820-1854"/>
+		<item value="org.eclipse.mylyn.git:1.5.0.v20140702-2223"/>
+		<item value="org.eclipse.mylyn.github.feature:2.1.0.201209190230-r"/>
+		<item value="org.eclipse.mylyn.monitor:3.13.0.v20140702-2155"/>
+		<item value="org.eclipse.mylyn.team_feature:3.13.0.v20140702-2225"/>
+		<item value="org.eclipse.mylyn.versions:1.5.0.v20140702-2223"/>
+		<item value="org.eclipse.mylyn_feature:3.13.0.v20140826-1734"/>
+		<item value="org.eclipse.platform:4.5.0.v20141029-2000"/>
+		<item value="org.eclipse.rcp:4.5.0.v20141029-2000"/>
+	</list>
+	<section name="CleanDialogSettings">
+		<item value="603" key="DIALOG_WIDTH"/>
+		<item value="308" key="DIALOG_Y_ORIGIN"/>
+		<item value="428" key="DIALOG_HEIGHT"/>
+		<item value="711" key="DIALOG_X_ORIGIN"/>
+		<item value="false" key="TOGGLE_SELECTED"/>
+	</section>
+</section>

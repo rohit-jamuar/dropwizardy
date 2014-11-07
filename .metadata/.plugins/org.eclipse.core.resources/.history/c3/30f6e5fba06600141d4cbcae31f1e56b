@@ -1,0 +1,71 @@
+package com.dropwizard_application.resources;
+
+import java.util.HashMap;
+
+import io.dropwizard.hibernate.UnitOfWork;
+
+import com.dropwizard_application.core.HashedStringRepresentation;
+import com.dropwizard_application.dB.InputOutput;
+import com.dropwizard_application.dB.InputOutputDAO;
+import com.google.common.base.Optional;
+
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
+import javax.ws.rs.Produces;
+import javax.ws.rs.QueryParam;
+import javax.ws.rs.core.MediaType;
+
+@Path("/getHash")
+@Produces(MediaType.APPLICATION_JSON)
+public class CipherResource {
+
+	private final InputOutputDAO d;
+	private static HashMap<Integer, Character> charMappings = new HashMap<Integer, Character>();
+	private static HashMap<Character, Integer> reverseCharMappings = new HashMap<Character, Integer>();
+	
+	public CipherResource(InputOutputDAO d) { 
+		if (charMappings.isEmpty() || reverseCharMappings.isEmpty())
+		{
+			char[] characters = "abcdefghijklmnopqrstuvwxyz".toCharArray();
+			for (int i = 0; i<characters.length; i++)
+			{
+				charMappings.put(i, characters[i]);
+				reverseCharMappings.put(characters[i], i);
+			}
+		}
+		this.d = d;
+	}
+	
+	private String generateCeaserCipher(String s, Optional<Integer> key)
+	{
+		String temp = s.toLowerCase();
+		StringBuilder result = new StringBuilder();
+		for (int i=0; i<temp.length(); i++)
+		{
+			int newIndex = (reverseCharMappings.get(temp.charAt(i)) + key.or(3)) % charMappings.size();
+			result.append(charMappings.get(newIndex));
+		}
+		return result.toString();
+	}
+	
+	@GET
+	@UnitOfWork
+	public HashedStringRepresentation getCipher(@QueryParam("str") Optional<String> str)
+	{
+		int generatedHash = str.or("Stranger").hashCode();
+		String strPassed = str.or("Stranger");
+		d.create(new InputOutput(strPassed, generatedHash));
+		return new HashedStringRepresentation(generatedHash, strPassed);
+	}
+	
+	@Path("/{str}")
+	@GET
+	@UnitOfWork
+	public HashedStringRepresentation searchHashCode(@PathParam("str") String str)
+	{
+		InputOutput result = d.findByInput(str).or(new InputOutput(String.format("notFound : %s", str), -1));
+		return new HashedStringRepresentation(result.getOutput(), result.getInput());
+	}
+	
+}

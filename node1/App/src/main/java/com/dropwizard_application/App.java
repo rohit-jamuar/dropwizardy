@@ -46,12 +46,10 @@ public class App extends Application<Config>
 		environment.healthChecks().register("alwaysHappy", h);
 		
 		final InputOutputDAO dao = new InputOutputDAO(hibernate.getSessionFactory());
-		final HashCodeResource r = new HashCodeResource(dao);
-		environment.jersey().register(r);
-		
-		final Client client = new JerseyClientBuilder(environment).using(Config.getJerseyClientConfiguration())
+		final Client clientFacilitator = new JerseyClientBuilder(environment).using(Config.getJerseyClientConfiguration())
                 .build(getName());
-		environment.addResource(new ExternalServiceResource(client));
+		final HashCodeResource r = new HashCodeResource(dao, clientFacilitator);
+		environment.jersey().register(r);
 		
 	}
 }

@@ -23,11 +23,13 @@ public class InputOutput {
 	@Column(name = "outputint", nullable = false)
 	private int output;
 	
-	public InputOutput() {}
+	@Column(name = "ctxt", nullable = false)
+	private String ctxt;
 	
-	public InputOutput(String input, int output) {
+	public InputOutput(String input, int output, String ctxt) {
 		this.input = input;
 		this.output = output;
+		this.ctxt = ctxt;
 	}
 
 	public String getInput() {
@@ -36,5 +38,9 @@ public class InputOutput {
 
 	public int getOutput() {
 		return output;
+	}
+	
+	public String getCtxt() {
+		return ctxt;
 	}
 }

@@ -29,4 +29,9 @@ httpClient:
   maxConnectionsPerRoute: 1024
   keepAlive: 0ms
   retries: 0
-  userAgent: App1 C1.0
+  userAgent: App1 (C1)
+jerseyClient:
+  minThreads: 1
+  maxThreads: 128
+  gzipEnabled: true
+  gzipEnabledForRequests: true

@@ -2,10 +2,13 @@ package com.dropwizard_application.resources;
 
 import io.dropwizard.hibernate.UnitOfWork;
 
+import com.dropwizard_application.CipherRepresentation;
 import com.dropwizard_application.core.HashedStringRepresentation;
 import com.dropwizard_application.persistenceUnit.InputOutput;
 import com.dropwizard_application.persistenceUnit.InputOutputDAO;
 import com.google.common.base.Optional;
+import com.sun.jersey.api.client.Client;
+import com.sun.jersey.api.client.WebResource;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
@@ -19,9 +22,11 @@ import javax.ws.rs.core.MediaType;
 public class HashCodeResource {
 
 	private final InputOutputDAO d;
+	private final Client c;
 	
-	public HashCodeResource(InputOutputDAO d) { 
+	public HashCodeResource(InputOutputDAO d, Client client) { 
 		this.d = d;
+		this.c = client;
 	}
 	
 	@GET
@@ -30,7 +35,10 @@ public class HashCodeResource {
 	{
 		int generatedHash = str.or("Stranger").hashCode();
 		String strPassed = str.or("Stranger");
-		d.create(new InputOutput(strPassed, generatedHash));
+		
+		WebResource r = c.resource("http://localhost:9002/getCipher").queryParam("str", strPassed);
+		CipherRepresentation response = r.accept(MediaType.APPLICATION_JSON_TYPE).get(CipherRepresentation.class);
+		 d.create(new InputOutput(strPassed, generatedHash, response.ctxt()));
 		return new HashedStringRepresentation(generatedHash, strPassed);
 	}
 	
@@ -39,7 +47,7 @@ public class HashCodeResource {
 	@UnitOfWork
 	public HashedStringRepresentation searchHashCode(@PathParam("str") String str)
 	{
-		InputOutput result = d.findByInput(str).or(new InputOutput(String.format("notFound : %s", str), -1));
+		InputOutput result = d.findByInput(str).or(new InputOutput(String.format("notFound : %s", str), -1, "Random"));
 		return new HashedStringRepresentation(result.getOutput(), result.getInput());
 	}
 	

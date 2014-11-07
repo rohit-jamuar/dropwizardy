@@ -1,0 +1,9 @@
+package com.dropwizard_application.core;
+
+public class Representation {
+	
+	@Length(max=30)
+	private String inputStr;
+	
+	
+}

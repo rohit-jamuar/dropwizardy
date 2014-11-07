@@ -1,0 +1,43 @@
+package com.dropwizard_application.resources;
+
+import com.dropwizard_application.core.HashedStringRepresentation;
+import com.dropwizard_application.persistenceUnit.InputOutput;
+import com.dropwizard_application.persistenceUnit.InputOutputDAO;
+import com.google.common.base.Optional;
+
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
+import javax.ws.rs.Produces;
+import javax.ws.rs.QueryParam;
+import javax.ws.rs.core.MediaType;
+
+@Path("/getHash")
+@Produces(MediaType.APPLICATION_JSON)
+public class HashCoderResource {
+
+	private final InputOutputDAO d;
+	
+	public HashCoderResource(InputOutputDAO d) { 
+		this.d = d;
+	}
+	
+	@GET
+	public HashedStringRepresentation getHashCode(@QueryParam("str") Optional<String> str)
+	{
+		int generatedHash = str.or("Stranger").hashCode();
+		String strPassed = str.or("Stranger");
+		d.create(new InputOutput(strPassed, generatedHash));
+		return new HashedStringRepresentation(generatedHash, strPassed);
+	}
+	
+	@Path(/{str})
+	@GET
+	public HashedStringRepresentation searchHashCode(@PathParam("str") Optional<String> str)
+	{
+		String strPassed = str.or("Stranger");
+		InputOutput result = d.findByInput(strPassed).or(new InputOutput(String.format("notFound : %s", strPassed), -1));
+		return new HashedStringRepresentation(result.getOutput(), result.getInput());
+	}
+	
+}

@@ -17,6 +17,9 @@
             <column name="outputint" type="integer">
                 <constraints nullable="false"/>
             </column>
+            <column name="ctxt" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
         </createTable>
     </changeSet>
 </databaseChangeLog>

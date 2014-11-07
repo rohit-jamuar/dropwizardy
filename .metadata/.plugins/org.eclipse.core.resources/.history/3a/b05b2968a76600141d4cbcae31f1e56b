@@ -1,0 +1,9 @@
+package com.dropwizard_application.core;
+
+public class AllCiphers {
+	
+	private final List<String> allData;
+	
+	[ublic A;;]
+
+}

@@ -1,0 +1,19 @@
+package com.dropwizard_application.core;
+
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+public class Representation {
+	
+	private int generatedHashCode;
+	
+	public Representation(int s)
+	{
+		this.generatedHashCode = s;
+	}
+	
+	@JsonProperty
+	public int getGeneratedHashCode()
+	{
+		return this.generatedHashCode;
+	}
+}

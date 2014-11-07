@@ -1,0 +1,8 @@
+*.
+*.class
+hibernate*
+dropwizard*
+target*
+
+
+
