@@ -24,9 +24,9 @@ import org.apache.http.client.HttpClient;
 public class HashCodeResource {
 
 	private final InputOutputDAO d;
-	private final HttpClient c;
+	private final Client c;
 	
-	public HashCodeResource(InputOutputDAO d, HttpClient clientFacilitator) { 
+	public HashCodeResource(InputOutputDAO d, Client clientFacilitator) { 
 		this.d = d;
 		this.c = clientFacilitator;
 	}

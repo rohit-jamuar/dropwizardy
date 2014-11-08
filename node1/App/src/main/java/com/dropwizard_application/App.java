@@ -1,7 +1,5 @@
 package com.dropwizard_application;
 
-import org.apache.http.client.HttpClient;
-
 import com.dropwizard_application.health.TempHealthCheck;
 import com.dropwizard_application.persistenceUnit.InputOutput;
 import com.dropwizard_application.persistenceUnit.InputOutputDAO;
@@ -9,7 +7,6 @@ import com.dropwizard_application.resources.HashCodeResource;
 import com.sun.jersey.api.client.Client;
 
 import io.dropwizard.Application;
-import io.dropwizard.client.HttpClientBuilder;
 import io.dropwizard.client.JerseyClientBuilder;
 import io.dropwizard.db.DataSourceFactory;
 import io.dropwizard.hibernate.HibernateBundle;
@@ -49,8 +46,8 @@ public class App extends Application<Config>
 		environment.healthChecks().register("alwaysHappy", h);
 		
 		final InputOutputDAO dao = new InputOutputDAO(hibernate.getSessionFactory());
-		final HttpClient clientFacilitator = new HttpClientBuilder(environment).using(Config.getHttpClientConfiguration())
-                .build(null);
+		final Client clientFacilitator = new JerseyClientBuilder(environment).using(Config.getJerseyClientConfiguration())
+                .build(getName());
 		final HashCodeResource r = new HashCodeResource(dao, clientFacilitator);
 		environment.jersey().register(r);
 		
