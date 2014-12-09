@@ -2,7 +2,8 @@
 *.class
 hibernate*
 dropwizard*
-**target/
+**/target/
+hibernate-release-4.3.7.Final/
 *~
 
 
